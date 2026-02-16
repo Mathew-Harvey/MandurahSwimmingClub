@@ -17,7 +17,7 @@ export default function JXProgram() {
       <section className="section">
         <div className="container">
           <AnimateIn type="fade-up">
-            <img src="/images/jx-program/junior-phoenix.jpg" alt="Junior Phoenix" className="page-featured-img" style={{ maxWidth: '480px', marginBottom: '1.5rem' }} />
+            <img src={`${import.meta.env.BASE_URL}images/jx-program/junior-phoenix.jpg`} alt="Junior Phoenix" className="page-featured-img" style={{ maxWidth: '480px', marginBottom: '1.5rem' }} />
           </AnimateIn>
           <AnimateIn type="fade-up" delay={80}>
             <div className="prose">

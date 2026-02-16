@@ -21,16 +21,16 @@ export default function Uniform() {
           </AnimateIn>
           <AnimateIn type="fade-up" delay={100}>
             <div className="uniform-gallery">
-              <img src="/images/uniform/polo-1.jpg" alt="Polo shirt" />
-              <img src="/images/uniform/polo-2.jpg" alt="Polo shirt" />
-              <img src="/images/uniform/cotton-tee-1.jpg" alt="Cotton tee" />
-              <img src="/images/uniform/cotton-tee-2.jpg" alt="Cotton tee" />
-              <img src="/images/uniform/hoodie-front.jpg" alt="Hoodie front" />
-              <img src="/images/uniform/hoodie-grey-rear.jpg" alt="Hoodie rear" />
+              <img src={`${import.meta.env.BASE_URL}images/uniform/polo-1.jpg`} alt="Polo shirt" />
+              <img src={`${import.meta.env.BASE_URL}images/uniform/polo-2.jpg`} alt="Polo shirt" />
+              <img src={`${import.meta.env.BASE_URL}images/uniform/cotton-tee-1.jpg`} alt="Cotton tee" />
+              <img src={`${import.meta.env.BASE_URL}images/uniform/cotton-tee-2.jpg`} alt="Cotton tee" />
+              <img src={`${import.meta.env.BASE_URL}images/uniform/hoodie-front.jpg`} alt="Hoodie front" />
+              <img src={`${import.meta.env.BASE_URL}images/uniform/hoodie-grey-rear.jpg`} alt="Hoodie rear" />
             </div>
           </AnimateIn>
           <p className="text-center" style={{ marginTop: '1.5rem' }}>
-            <img src="/images/uniform/mecca-sports-logo.png" alt="Mecca Sports" style={{ height: 40, display: 'inline-block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/uniform/mecca-sports-logo.png`} alt="Mecca Sports" style={{ height: 40, display: 'inline-block' }} />
           </p>
         </div>
       </section>

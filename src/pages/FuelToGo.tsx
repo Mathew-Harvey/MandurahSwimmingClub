@@ -17,8 +17,8 @@ export default function FuelToGo() {
           </p>
           <AnimateIn type="fade-up">
             <div className="ftgp-hero">
-              <img src="/images/fuel-to-go/ftgp-main.jpg" alt="Fuel to Go and Play" className="ftgp-main-img" />
-              <img src="/images/fuel-to-go/ftgp-gold-badge.png" alt="FTGP Gold Badge" className="ftgp-badge" />
+              <img src={`${import.meta.env.BASE_URL}images/fuel-to-go/ftgp-main.jpg`} alt="Fuel to Go and Play" className="ftgp-main-img" />
+              <img src={`${import.meta.env.BASE_URL}images/fuel-to-go/ftgp-gold-badge.png`} alt="FTGP Gold Badge" className="ftgp-badge" />
             </div>
           </AnimateIn>
           <AnimateIn type="fade-up" delay={100}>

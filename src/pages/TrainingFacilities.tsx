@@ -18,7 +18,7 @@ export default function TrainingFacilities() {
           <div className="facility-grid">
             <AnimateIn type="fade-up">
               <div className="facility-card">
-                <img src="/images/training-facilities/indoor-pool.jpg" alt="Indoor 25m pool" />
+                <img src={`${import.meta.env.BASE_URL}images/training-facilities/indoor-pool.jpg`} alt="Indoor 25m pool" />
                 <h2>Indoor 25m Pool</h2>
                 <ul>
                   <li>8 &times; 25 metre lap lanes</li>
@@ -29,7 +29,7 @@ export default function TrainingFacilities() {
             </AnimateIn>
             <AnimateIn type="fade-up" delay={120}>
               <div className="facility-card">
-                <img src="/images/training-facilities/outdoor-pool.jpg" alt="Outdoor 50m pool" />
+                <img src={`${import.meta.env.BASE_URL}images/training-facilities/outdoor-pool.jpg`} alt="Outdoor 50m pool" />
                 <h2>Outdoor 50m Pool</h2>
                 <ul>
                   <li>8 &times; 50 metre lap lanes</li>

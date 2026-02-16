@@ -35,7 +35,7 @@ export default function Integrity() {
   return (
     <>
       <header className="page-header integrity-header">
-        <img src="/images/integrity/header-image.jpeg" alt="" className="page-header-bg" />
+        <img src={`${import.meta.env.BASE_URL}images/integrity/header-image.jpeg`} alt="" className="page-header-bg" />
         <div className="container">
           <h1>Integrity, Policies & Rules</h1>
           <p>Keeping everyone safe</p>

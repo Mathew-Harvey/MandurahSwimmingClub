@@ -17,7 +17,7 @@ export default function About() {
           <div className="content-grid">
             <div className="content-main">
               <AnimateIn type="fade-up">
-                <img src="/images/about-us/team-photo.jpg" alt="Mandurah Swimming Club team" className="page-featured-img" />
+                <img src={`${import.meta.env.BASE_URL}images/about-us/team-photo.jpg`} alt="Mandurah Swimming Club team" className="page-featured-img" />
               </AnimateIn>
               <AnimateIn type="fade-up" delay={100}>
                 <div className="prose">

@@ -13,13 +13,13 @@ export default function CountryPennants() {
         <div className="container">
           <div className="country-pennants-promo">
             <AnimateIn type="scale">
-              <img src="/images/country-pennants/cp-promo-banner.png" alt="Country Pennants 2025" className="cp-banner" />
+              <img src={`${import.meta.env.BASE_URL}images/country-pennants/cp-promo-banner.png`} alt="Country Pennants 2025" className="cp-banner" />
             </AnimateIn>
             <AnimateIn type="fade-up" delay={100}>
-              <img src="/images/country-pennants/club-logo-colour.png" alt="Mandurah Swimming Club" className="cp-logo" />
+              <img src={`${import.meta.env.BASE_URL}images/country-pennants/club-logo-colour.png`} alt="Mandurah Swimming Club" className="cp-logo" />
             </AnimateIn>
             <AnimateIn type="fade-up" delay={200}>
-              <img src="/images/country-pennants/artwork.jpg" alt="" className="cp-artwork" />
+              <img src={`${import.meta.env.BASE_URL}images/country-pennants/artwork.jpg`} alt="" className="cp-artwork" />
             </AnimateIn>
           </div>
         </div>

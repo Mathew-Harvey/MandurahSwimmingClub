@@ -88,12 +88,12 @@
 .top-nav-link.active::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0.875rem;
-  right: 0.875rem;
-  height: 2px;
+  bottom: 2px;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2.5px;
   background: var(--grad-teal);
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 /* ---------- Dropdown ---------- */
@@ -145,9 +145,10 @@
   background: var(--white);
   border-radius: var(--radius-md);
   box-shadow:
-    0 10px 40px rgba(15, 23, 42, 0.12),
+    0 10px 40px rgba(15, 23, 42, 0.14),
     0 2px 8px rgba(15, 23, 42, 0.08);
   border: 1px solid var(--gray-200);
+  border-top: 2px solid var(--teal);
   padding: var(--space-sm);
   min-width: 220px;
   display: flex;
@@ -158,27 +159,27 @@
 .dropdown-panel-inner::before {
   content: '';
   position: absolute;
-  top: -5px;
+  top: -6px;
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
   width: 10px;
   height: 10px;
-  background: var(--white);
-  border-top: 1px solid var(--gray-200);
-  border-left: 1px solid var(--gray-200);
+  background: var(--teal);
   border-radius: 2px 0 0 0;
 }
 
 .dropdown-link {
   display: block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.875rem;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--navy-soft);
   border-radius: var(--radius-sm);
+  border-left: 2px solid transparent;
   transition:
     background var(--duration-fast) ease,
-    color var(--duration-fast) ease;
+    color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -186,6 +187,7 @@
 .dropdown-link:hover {
   background: var(--teal-muted);
   color: var(--teal-dark);
+  border-left-color: var(--teal);
   text-decoration: none;
 }
 
@@ -435,6 +437,19 @@
   flex-shrink: 0;
 }
 
+.btn--outline-mobile {
+  background: transparent !important;
+  color: var(--white) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  box-shadow: none !important;
+}
+
+.btn--outline-mobile:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  color: var(--white) !important;
+}
+
 /* ---------- Main Content ---------- */
 .main-content {
   min-height: 60vh;
@@ -488,6 +503,9 @@
 .footer-logo {
   height: 48px;
   width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  align-self: flex-start;
   opacity: 0.9;
 }
 

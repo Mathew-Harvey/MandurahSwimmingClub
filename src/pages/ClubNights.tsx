@@ -13,8 +13,8 @@ export default function ClubNights() {
         <div className="container">
           <AnimateIn type="fade-up">
             <div className="club-nights-imgs">
-              <img src="/images/club-nights/lily-and-megan.jpg" alt="Club night" />
-              <img src="/images/club-nights/time-trials.jpg" alt="Time trials" />
+              <img src={`${import.meta.env.BASE_URL}images/club-nights/lily-and-megan.jpg`} alt="Club night" />
+              <img src={`${import.meta.env.BASE_URL}images/club-nights/time-trials.jpg`} alt="Time trials" />
             </div>
           </AnimateIn>
           <AnimateIn type="fade-up" delay={100}>

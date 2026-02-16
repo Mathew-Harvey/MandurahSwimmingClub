@@ -14,7 +14,7 @@ export default function Fees() {
           <div className="content-grid">
             <div className="content-main">
               <AnimateIn type="fade-up">
-                <img src="/images/fees/laps-stock.jpg" alt="Swimming" className="page-featured-img" />
+                <img src={`${import.meta.env.BASE_URL}images/fees/laps-stock.jpg`} alt="Swimming" className="page-featured-img" />
               </AnimateIn>
               <AnimateIn type="fade-up" delay={100}>
                 <div className="prose">

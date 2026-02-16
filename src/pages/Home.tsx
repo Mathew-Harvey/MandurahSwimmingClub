@@ -9,7 +9,7 @@ export default function Home() {
     <>
       {/* ---- Hero ---- */}
       <section className="hero">
-        <img src="/images/home/aerial-pool-hero.jpg" alt="Aerial view of Mandurah Aquatic pool" className="hero-bg" />
+        <img src={`${import.meta.env.BASE_URL}images/home/aerial-pool-hero.jpg`} alt="Aerial view of Mandurah Aquatic pool" className="hero-bg" />
         <div className="hero-overlay" />
         <div className="hero-content container">
           <span className="hero-eyebrow">
@@ -61,7 +61,7 @@ export default function Home() {
       <section className="promo-banner">
         <div className="container">
           <AnimateIn type="scale">
-            <img src="/images/home/country-pennants-banner.jpg" alt="Country Pennants 2025" className="promo-img" />
+            <img src={`${import.meta.env.BASE_URL}images/home/country-pennants-banner.jpg`} alt="Country Pennants 2025" className="promo-img" />
           </AnimateIn>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function Home() {
           </AnimateIn>
           <AnimateIn type="fade-left" delay={150}>
             <div className="about-preview-img">
-              <img src="/images/home/swimmer-image.jpg" alt="Swimmer" />
+              <img src={`${import.meta.env.BASE_URL}images/home/swimmer-image.jpg`} alt="Swimmer" />
             </div>
           </AnimateIn>
         </div>

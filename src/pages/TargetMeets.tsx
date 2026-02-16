@@ -27,7 +27,7 @@ export default function TargetMeets() {
       <section className="section">
         <div className="container">
           <AnimateIn type="fade-up">
-            <img src="/images/target-meets/junior-lc-states.jpg" alt="Target meets" className="page-featured-img" style={{ maxWidth: '640px', marginBottom: '1.5rem' }} />
+            <img src={`${import.meta.env.BASE_URL}images/target-meets/junior-lc-states.jpg`} alt="Target meets" className="page-featured-img" style={{ maxWidth: '640px', marginBottom: '1.5rem' }} />
           </AnimateIn>
           <AnimateIn type="fade-up" delay={100}>
             <div className="prose">

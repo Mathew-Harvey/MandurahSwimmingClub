@@ -12,7 +12,7 @@ export default function Championships() {
       <section className="section">
         <div className="container">
           <AnimateIn type="fade-up">
-            <img src="/images/championships/team.jpg" alt="Club Championships" className="page-featured-img" style={{ maxWidth: '720px', marginBottom: '1.5rem' }} />
+            <img src={`${import.meta.env.BASE_URL}images/championships/team.jpg`} alt="Club Championships" className="page-featured-img" style={{ maxWidth: '720px', marginBottom: '1.5rem' }} />
           </AnimateIn>
           <AnimateIn type="fade-up" delay={100}>
             <div className="prose">

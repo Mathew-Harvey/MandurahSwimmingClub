@@ -154,7 +154,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className={`site-header ${scrollY > 20 ? 'scrolled' : ''}`}>
         <div className="header-inner container">
           <Link to="/" className="logo-wrap" onClick={() => setMenuOpen(false)}>
-            <img src="/images/global/club-logo-white.png" alt="Mandurah Swimming Club" className="logo" />
+            <img src={`${import.meta.env.BASE_URL}images/global/club-logo-white.png`} alt="Mandurah Swimming Club" className="logo" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -185,7 +185,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className={`mobile-nav-overlay ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(false)} />
       <nav className={`mobile-nav ${menuOpen ? 'open' : ''}`} aria-label="Mobile navigation">
         <div className="mobile-nav-header">
-          <img src="/images/global/club-logo-white.png" alt="Mandurah Swimming Club" className="mobile-nav-logo" />
+          <img src={`${import.meta.env.BASE_URL}images/global/club-logo-white.png`} alt="Mandurah Swimming Club" className="mobile-nav-logo" />
           <button type="button" className="mobile-nav-close" aria-label="Close menu" onClick={() => setMenuOpen(false)}>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M4 4l12 12M16 4L4 16" />
@@ -207,7 +207,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <div className="mobile-nav-footer">
           <a href={JOIN_URL} className="btn btn--primary btn--pill" style={{ width: '100%' }} target="_blank" rel="noopener noreferrer">Join Us</a>
-          <a href={JOIN_URL} className="btn btn--outline btn--outline-white btn--pill" style={{ width: '100%' }} target="_blank" rel="noopener noreferrer">Renew Membership</a>
+          <a href={JOIN_URL} className="btn btn--outline-mobile btn--pill" style={{ width: '100%' }} target="_blank" rel="noopener noreferrer">Renew Membership</a>
         </div>
       </nav>
 
@@ -217,7 +217,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="footer-top">
           <div className="container footer-grid">
             <div className="footer-brand">
-              <img src="/images/global/club-logo-white.png" alt="Mandurah Swimming Club" className="footer-logo" />
+              <img src={`${import.meta.env.BASE_URL}images/global/club-logo-white.png`} alt="Mandurah Swimming Club" className="footer-logo" />
               <p className="footer-tagline">Driven by PASSION | Powered by BELIEF | Achieving SUCCESS</p>
               <p className="footer-desc">Mandurah's leading swimming club since 1967. Developing swimmers to reach their full potential both in and out of the pool.</p>
             </div>
