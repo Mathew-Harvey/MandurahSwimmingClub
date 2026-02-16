@@ -41,7 +41,7 @@ The contact page uses a **free-form submit to email** via [Formspree](https://fo
 
 - **Public:** The calendar shows events in a read-only list (upcoming and past).
 - **Admin:** Click **Admin Login**, enter the calendar admin password, then use **Add Event** to create events (title, date, optional time, optional description). Events are stored in the browser (localStorage).
-- **Password:** Default is `msc2025`. To change it, set in `.env`:
+- **Password:** Set in `.env` (see `.env.example`):
 
   ```env
   VITE_CALENDAR_ADMIN_PASSWORD=your-secret-password

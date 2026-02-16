@@ -4,8 +4,8 @@ import './Calendar.css'
 const STORAGE_KEY = 'msc_calendar_events'
 const ADMIN_KEY = 'msc_calendar_admin'
 
-// Default password – set VITE_CALENDAR_ADMIN_PASSWORD in .env for production
-const DEFAULT_ADMIN_PASSWORD = import.meta.env.VITE_CALENDAR_ADMIN_PASSWORD || 'msc2025'
+// Set VITE_CALENDAR_ADMIN_PASSWORD in .env (see .env.example)
+const DEFAULT_ADMIN_PASSWORD = import.meta.env.VITE_CALENDAR_ADMIN_PASSWORD ?? ''
 
 export interface CalendarEvent {
   id: string
