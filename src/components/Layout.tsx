@@ -255,6 +255,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="footer-links-external">
               <a href="https://www.swimming.org.au/" target="_blank" rel="noopener noreferrer">Swimming Australia</a>
               <a href="https://wa.swimming.org.au/" target="_blank" rel="noopener noreferrer">Swimming WA</a>
+              <Link to="/admin-login">Admin</Link>
             </div>
           </div>
         </div>
