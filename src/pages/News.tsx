@@ -3,7 +3,7 @@ import AnimateIn from '../components/AnimateIn'
 import data from '../../content/news.json'
 
 export default function News() {
-  const posts = data.posts as { title: string; date: string; summary: string; body?: string; image?: string }[]
+  const posts = (Array.isArray(data.posts) ? data.posts : []) as { title: string; date: string; summary: string; body?: string; image?: string }[]
 
   if (!posts || posts.length === 0) {
     return (
@@ -58,7 +58,7 @@ export default function News() {
                   <h2 style={{ marginBottom: '0.25rem' }}>{post.title}</h2>
                   <p style={{ color: 'var(--gray)', fontSize: '0.875rem', marginBottom: '0.75rem' }}>{post.date}</p>
                   <p>{post.summary}</p>
-                  {post.body && <div className="prose" style={{ marginTop: '0.75rem' }} dangerouslySetInnerHTML={{ __html: post.body }} />}
+                  {post.body && <div className="prose" style={{ marginTop: '0.75rem', whiteSpace: 'pre-line' }}>{post.body}</div>}
                 </article>
               </AnimateIn>
             ))}
