@@ -1,27 +1,10 @@
 import { Link } from 'react-router-dom'
 import AnimateIn from '../components/AnimateIn'
+import data from '../../content/sponsors.json'
 
-const platinum = [{ name: 'Coastal Realty WA', logo: 'coastal-realty-logo.jpg', ext: 'jpg', phone: '0421 963 426', address: 'Shop 5a - 2 Redwood Avenue, Karnup, WA', facebook: 'https://www.facebook.com/CoastalRealtyWA' }]
+type Sponsor = { name: string; logo: string; phone?: string; address?: string; web?: string; facebook?: string }
 
-const gold = [
-  { name: 'Swimtek', logo: 'swimtek-logo.png', ext: 'png', phone: '0415 123 384', address: '54A Angove St, North Perth WA 6006' },
-  { name: 'City of Mandurah', logo: 'city-of-mandurah-logo.png', ext: 'png', phone: '9550 3777', address: '3 Peel St, Mandurah, Western Australia 6210' },
-]
-
-const silver = [
-  { name: 'AMD Chartered Accountants Mandurah', logo: 'amd-logo.jpg', ext: 'jpg', web: 'http://www.thomascontracting.net.au/' },
-  { name: 'BDR Business', logo: 'bdr-business-logo.jpg', ext: 'jpg', web: 'https://www.bdrbusiness.com.au/' },
-  { name: 'Mandurah Steak House', logo: 'mandurah-steak-house.png', ext: 'png' },
-]
-
-const bronze = [
-  { name: 'Madison Builders', logo: 'madison-builders.jpg', ext: 'jpg', web: 'http://madisonbuilders.com.au/', facebook: 'https://www.facebook.com/madisonbuildersau/' },
-  { name: 'Peel Garage Doors', logo: 'peel-garage-doors.jpg', ext: 'jpg', facebook: 'https://www.facebook.com/peelgaragedoors' },
-  { name: 'Mandurah Graphics', logo: 'mandurah-graphics.jpg', ext: 'jpg' },
-  { name: 'Rewind Skin & Laser Centre', logo: 'rewind-skin-laser.jpg', ext: 'jpg' },
-]
-
-function SponsorCard({ s, tier }: { s: { name: string; logo: string; ext: string; phone?: string; address?: string; web?: string; facebook?: string }; tier: string }) {
+function SponsorCard({ s, tier }: { s: Sponsor; tier: string }) {
   return (
     <div className={`sponsor-card sponsor-card--${tier}`}>
       <img src={`/images/sponsors/${s.logo}`} alt={s.name} />
@@ -34,6 +17,13 @@ function SponsorCard({ s, tier }: { s: { name: string; logo: string; ext: string
   )
 }
 
+const tiers = [
+  { key: 'platinum' as const, label: 'Platinum Sponsor' },
+  { key: 'gold' as const, label: 'Gold Sponsors' },
+  { key: 'silver' as const, label: 'Silver Sponsors' },
+  { key: 'bronze' as const, label: 'Bronze Sponsors' },
+]
+
 export default function Sponsors() {
   return (
     <>
@@ -45,38 +35,20 @@ export default function Sponsors() {
       </header>
       <section className="section">
         <div className="container">
-          <AnimateIn type="fade-up">
-            <h2>Platinum Sponsor</h2>
-            <div className="sponsor-grid sponsor-grid--platinum">
-              {platinum.map((s) => (
-                <SponsorCard key={s.name} s={s} tier="platinum" />
-              ))}
-            </div>
-          </AnimateIn>
-          <AnimateIn type="fade-up" delay={80}>
-            <h2>Gold Sponsors</h2>
-            <div className="sponsor-grid">
-              {gold.map((s) => (
-                <SponsorCard key={s.name} s={s} tier="gold" />
-              ))}
-            </div>
-          </AnimateIn>
-          <AnimateIn type="fade-up" delay={160}>
-            <h2>Silver Sponsors</h2>
-            <div className="sponsor-grid">
-              {silver.map((s) => (
-                <SponsorCard key={s.name} s={s} tier="silver" />
-              ))}
-            </div>
-          </AnimateIn>
-          <AnimateIn type="fade-up" delay={240}>
-            <h2>Bronze Sponsors</h2>
-            <div className="sponsor-grid">
-              {bronze.map((s) => (
-                <SponsorCard key={s.name} s={s} tier="bronze" />
-              ))}
-            </div>
-          </AnimateIn>
+          {tiers.map(({ key, label }, i) => {
+            const list = data[key] as Sponsor[]
+            if (!list || list.length === 0) return null
+            return (
+              <AnimateIn key={key} type="fade-up" delay={i * 80}>
+                <h2>{label}</h2>
+                <div className={`sponsor-grid${key === 'platinum' ? ' sponsor-grid--platinum' : ''}`}>
+                  {list.map((s) => (
+                    <SponsorCard key={s.name} s={s} tier={key} />
+                  ))}
+                </div>
+              </AnimateIn>
+            )
+          })}
           <AnimateIn type="fade-up">
             <p className="text-center" style={{ marginTop: '2rem' }}>
               <Link to="/contact" className="btn btn--primary btn--pill">Want to be a sponsor? Contact us</Link>

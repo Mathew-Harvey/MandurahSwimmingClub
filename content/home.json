@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "eyebrow": "Est. 1967 — Mandurah, Western Australia",
+    "heading": "Dive into something extraordinary.",
+    "tagline": "Fitness, fun, lifestyle and community.",
+    "description": "Mandurah Swimming Club opens a world of possibilities for swimmers of all abilities. Whether you're starting out, training seriously, or looking to compete — we'll take your swimming to the next level.",
+    "image": "images/home/aerial-pool-hero.jpg"
+  },
+  "stats": [
+    { "number": "57+", "label": "Years of Excellence" },
+    { "number": "7", "label": "Training Squads" },
+    { "number": "7", "label": "Dedicated Coaches" },
+    { "number": "6", "label": "Sessions / Week" }
+  ],
+  "promoBanner": {
+    "image": "images/home/country-pennants-banner.jpg",
+    "alt": "Country Pennants 2025"
+  },
+  "aboutPreview": {
+    "heading": "Mandurah Swimming Club",
+    "lead": "Mandurah's leading swimming club since 1967.",
+    "paragraphs": [
+      "The Mandurah Swimming Club continues to be a competitive swimming club attending major swim meets throughout Western Australia. Our aim is to develop and assist each swimmer to reach their full potential both in and out of the pool.",
+      "The Head Coach and our team of coaches provide programs enabling swimmers to develop skills, teach discipline and provide an environment in which swimmers can safely and happily enjoy their swimming."
+    ],
+    "image": "images/home/swimmer-image.jpg",
+    "joinUrl": "https://www.myswimresults.com.au/MembershipNewRegistration.aspx?ClubID=36"
+  },
+  "trial": {
+    "heading": "2 Week Free Trial",
+    "subtitle": "Experience our world-class coaching and facilities with no commitment.",
+    "ctaText": "Book your trial today"
+  },
+  "coachesPreview": {
+    "heading": "Our Coaches",
+    "intro": "Appointed Head Coach Hyojin \"Sharky\" Son leads our club with an impressive international coaching record. Our junior coaches Chelsea, Jemma, Charlotte, Sofia, Aiden and Kaiden bring experience and enthusiasm to every session.",
+    "featured": ["coach-sharky", "coach-chelsea", "coach-jemma", "coach-aiden", "coach-kaiden"]
+  },
+  "vision": "To be a leading community swimming club that is inclusive of all individuals, that aims to inspire swimmers, has a strong ethos and balance of participation, success, and excellence.",
+  "mission": "To offer pathways for all swimmers to achieve their personal best in a safe, encouraging, and inclusive environment.",
+  "tagline": "Driven by PASSION | Powered by BELIEF | Achieving SUCCESS"
+}

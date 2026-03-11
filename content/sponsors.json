@@ -1,0 +1,20 @@
+{
+  "platinum": [
+    { "name": "Coastal Realty WA", "logo": "coastal-realty-logo.jpg", "phone": "0421 963 426", "address": "Shop 5a - 2 Redwood Avenue, Karnup, WA", "web": "", "facebook": "https://www.facebook.com/CoastalRealtyWA" }
+  ],
+  "gold": [
+    { "name": "Swimtek", "logo": "swimtek-logo.png", "phone": "0415 123 384", "address": "54A Angove St, North Perth WA 6006", "web": "", "facebook": "" },
+    { "name": "City of Mandurah", "logo": "city-of-mandurah-logo.png", "phone": "9550 3777", "address": "3 Peel St, Mandurah, Western Australia 6210", "web": "", "facebook": "" }
+  ],
+  "silver": [
+    { "name": "AMD Chartered Accountants Mandurah", "logo": "amd-logo.jpg", "phone": "", "address": "", "web": "http://www.thomascontracting.net.au/", "facebook": "" },
+    { "name": "BDR Business", "logo": "bdr-business-logo.jpg", "phone": "", "address": "", "web": "https://www.bdrbusiness.com.au/", "facebook": "" },
+    { "name": "Mandurah Steak House", "logo": "mandurah-steak-house.png", "phone": "", "address": "", "web": "", "facebook": "" }
+  ],
+  "bronze": [
+    { "name": "Madison Builders", "logo": "madison-builders.jpg", "phone": "", "address": "", "web": "http://madisonbuilders.com.au/", "facebook": "https://www.facebook.com/madisonbuildersau/" },
+    { "name": "Peel Garage Doors", "logo": "peel-garage-doors.jpg", "phone": "", "address": "", "web": "", "facebook": "https://www.facebook.com/peelgaragedoors" },
+    { "name": "Mandurah Graphics", "logo": "mandurah-graphics.jpg", "phone": "", "address": "", "web": "", "facebook": "" },
+    { "name": "Rewind Skin & Laser Centre", "logo": "rewind-skin-laser.jpg", "phone": "", "address": "", "web": "", "facebook": "" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "season": "2025 Long Course Season",
+  "intro": "Mandurah Swimming Club coaches and committee review upcoming meets and decide which to target as a club. We encourage all swimmers to work towards competing at swim meets. Coaches attend target meets to support swimmers. Discuss entries with your coach before registering.",
+  "pennantNote": "Swimmers intending to nominate for Country Pennants have until (and including) Country Championships to obtain their fastest time for the season, which determines the squad.",
+  "meets": [
+    "SWA Summer Qual Meet - 8th & 9th November",
+    "Southwest Region Meet - 16th November",
+    "Club Night/Time Trials - 21st November",
+    "2025 Mandurah LC Challenge - 30th November",
+    "Hancock Prospecting State Championships (Senior) 19th to 22nd December",
+    "Hancock Prospecting State Relays (Junior & Seniors) 23rd December",
+    "Swimming WA Country Championships 2nd to 4th January 2026",
+    "Club Night/Time Trials - 30th January",
+    "SWA National Prep Meet (Junior Challenge) - 14th & 15th February",
+    "2026 Country Pennants - Karratha - 28th February to 1st March",
+    "MSC Club Championships - 21st March",
+    "Aqua Technics WA Junior Championships - 27th to 29th March"
+  ],
+  "footnote": "Qualification times required to enter.",
+  "image": "images/target-meets/junior-lc-states.jpg"
+}
