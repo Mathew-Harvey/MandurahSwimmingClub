@@ -5,32 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Mandurah Swimming Club — Content Manager</title>
+
+  <!-- Club fonts (same as main website) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
   <style>
     body { margin: 0; }
-    /* Custom CMS login page styling */
     [data-slate-editor] { -webkit-user-modify: read-write !important; }
-    /* Style the login screen */
-    .nc-app-container {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-    /* Make logo bigger and add padding */
-    .nc-logScreen-logo {
-      max-height: 120px !important;
-      margin-bottom: 1rem !important;
-    }
-    /* Style the login wrapper background */
+
+    /* ── Login Page ── */
     [class*="LoginPage"] {
-      background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 50%, #14b8a6 100%) !important;
+      background: linear-gradient(135deg, #0f172a 0%, #0f172a 40%, #0f766e 100%) !important;
       min-height: 100vh;
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     }
-    /* Decap CMS overrides for the outer frame */
-    div[class*="AppMainContainer"] > div:first-child {
-      background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 50%, #14b8a6 100%) !important;
+
+    /* Logo sizing */
+    [class*="LoginPage"] img {
+      max-height: 100px !important;
+      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.3));
+    }
+
+    /* Login button */
+    [class*="LoginPage"] [class*="LoginButton"] {
+      background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%) !important;
+      border: none !important;
+      border-radius: 9999px !important;
+      padding: 0.875rem 2.5rem !important;
+      font-family: 'DM Sans', system-ui, sans-serif !important;
+      font-weight: 600 !important;
+      font-size: 1rem !important;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 14px rgba(13,148,136,0.35) !important;
+      transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease !important;
+    }
+    [class*="LoginPage"] [class*="LoginButton"]:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(13,148,136,0.45) !important;
+    }
+
+    /* ── App Chrome (after login) ── */
+    /* Top toolbar */
+    [class*="AppHeader"] {
+      background: #0f172a !important;
+      border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+      font-family: 'DM Sans', system-ui, sans-serif !important;
+    }
+
+    /* Sidebar */
+    [class*="SidebarNavList"],
+    [class*="Sidebar"] {
+      font-family: 'DM Sans', system-ui, sans-serif !important;
+    }
+
+    /* Collection headings */
+    [class*="CollectionLabel"],
+    [class*="ListCardTitle"],
+    [class*="ObjectWidgetTopBar"],
+    [class*="ControlLabel"] {
+      font-family: 'Outfit', system-ui, sans-serif !important;
+      font-weight: 700 !important;
+    }
+
+    /* Editor controls */
+    [class*="ControlContainer"],
+    [class*="WidgetControl"],
+    input,
+    textarea,
+    select {
+      font-family: 'DM Sans', system-ui, sans-serif !important;
+    }
+
+    /* Buttons inside editor */
+    [class*="ToolbarButton"],
+    [class*="PublishButton"],
+    button[class*="Button"] {
+      font-family: 'DM Sans', system-ui, sans-serif !important;
+    }
+
+    /* Accent color overrides — teal instead of default blue */
+    a[class*="SidebarNavLink"][class*="active"],
+    [class*="SidebarNavLink"]:hover {
+      color: #0d9488 !important;
     }
   </style>
-  <!-- Using GitHub backend — no Netlify Identity needed -->
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Register the website's preview stylesheet so the editor preview
+    // pane matches the live site's typography and spacing
+    CMS.registerPreviewStyle("/admin/preview.css");
+  </script>
 </body>
 </html>
