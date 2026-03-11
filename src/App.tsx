@@ -21,6 +21,7 @@ import Sponsors from './pages/Sponsors'
 import Donate from './pages/Donate'
 import Contact from './pages/Contact'
 import CountryPennants from './pages/CountryPennants'
+import Admin from './pages/Admin'
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
         <Route path="/donate" element={<Donate />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/country-pennants" element={<CountryPennants />} />
+        <Route path="/admin-login" element={<Admin />} />
       </Routes>
     </Layout>
   )
