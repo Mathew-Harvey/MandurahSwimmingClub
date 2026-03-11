@@ -95,9 +95,10 @@
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // Register the website's preview stylesheet so the editor preview
-    // pane matches the live site's typography and spacing
+    // Load the website's full design system into the preview pane
     CMS.registerPreviewStyle("/admin/preview.css");
   </script>
+  <!-- Custom preview templates — render each collection like the live site -->
+  <script src="/admin/previews.js"></script>
 </body>
 </html>
