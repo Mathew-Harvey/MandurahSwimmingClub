@@ -1,0 +1,39 @@
+{
+  "intro": "We would love to have you as a Mandurah Swimming Club Member",
+  "kidsportNote": "Mandurah Swimming Club accepts KidSport vouchers.",
+  "kidsportUrl": "https://www.dlgsc.wa.gov.au/funding/sport-and-recreation-funding/kidsport",
+  "swaIntro": "Members are required to register with Swimming WA (comprehensive insurance and eligibility to compete). Fee paid online via My Swim Results; due 1st October each year.",
+  "swaFees": [
+    { "category": "Annual (Competitive)", "description": "Full membership Swimmers 9+", "fee": "$153.55" },
+    { "category": "Participation", "description": "Swimmers 9+ fitness / new to competitive", "fee": "$92.66" },
+    { "category": "Junior Dolphins", "description": "Swimmers 5–8 transitioning from learn-to-swim", "fee": "$46.90" },
+    { "category": "Parent/Guardian", "description": "Required per family with swimmer under 18", "fee": "$5.62" },
+    { "category": "Coach", "description": "ASCTA accreditation", "fee": "$33.28" }
+  ],
+  "clubFeesIntro": "Invoiced biannually in October & April.",
+  "clubFees": [
+    { "members": "One Child", "fee": "$100" },
+    { "members": "Two Children", "fee": "$190" },
+    { "members": "Three Children", "fee": "$270" },
+    { "members": "Four Children", "fee": "$340" }
+  ],
+  "squadFeesIntro": "Squad fees (invoiced monthly) include coaching, lane hire and club nights.",
+  "squadFees": [
+    { "squad": "Purple", "sessions": "2", "fee": "$52" },
+    { "squad": "Blue", "sessions": "2", "fee": "$58" },
+    { "squad": "Fitness/Non-Competitive", "sessions": "2", "fee": "$55" },
+    { "squad": "Purple", "sessions": "3", "fee": "$72" },
+    { "squad": "Blue", "sessions": "3", "fee": "$86" },
+    { "squad": "Green", "sessions": "3", "fee": "$86" },
+    { "squad": "Green / Yellow / Orange", "sessions": "4", "fee": "$107" },
+    { "squad": "Fitness/Non-Competitive", "sessions": "4", "fee": "$85" },
+    { "squad": "Yellow / Orange", "sessions": "5", "fee": "$121" },
+    { "squad": "Red", "sessions": "5", "fee": "$121" },
+    { "squad": "Red / Black", "sessions": "6", "fee": "$132.50" },
+    { "squad": "Red / Black", "sessions": "7", "fee": "$144.50" },
+    { "squad": "Black", "sessions": "8", "fee": "$157" }
+  ],
+  "footnote": "Mandurah Swimming Club fees do not include entry to the MARC pool facility.",
+  "marcUrl": "https://www.mandurah.wa.gov.au/community/places/aquatic-and-recreation-centres/memberships-and-entry-fees",
+  "image": "images/fees/laps-stock.jpg"
+}

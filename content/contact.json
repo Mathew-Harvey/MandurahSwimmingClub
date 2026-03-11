@@ -1,0 +1,18 @@
+{
+  "contacts": [
+    { "role": "President", "name": "Samantha Maley", "email": "president@mandurahswimmingclub.com.au" },
+    { "role": "Vice President", "name": "John McRae", "email": "vicepresident@mandurahswimmingclub.com.au" },
+    { "role": "Registrar", "name": "Natasha Fernandes", "email": "registrar@mandurahswimmingclub.com.au" },
+    { "role": "Secretary", "name": "Kelli Thomson", "email": "secretary@mandurahswimmingclub.com.au" },
+    { "role": "Treasurer", "name": "Tamara Vreeken", "email": "treasurer@mandurahswimmingclub.com.au" }
+  ],
+  "venue": {
+    "name": "Mandurah Aquatic and Recreation Centre",
+    "street": "303 Pinjarra Road",
+    "suburb": "Mandurah WA 6210"
+  },
+  "postal": {
+    "line1": "PO Box 216",
+    "line2": "Mandurah WA 6210"
+  }
+}

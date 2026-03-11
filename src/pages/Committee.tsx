@@ -1,27 +1,6 @@
 import { Link } from 'react-router-dom'
 import AnimateIn from '../components/AnimateIn'
-
-const contacts = [
-  { role: 'President', name: 'Samantha Maley', email: 'president@mandurahswimmingclub.com.au' },
-  { role: 'Vice President', name: 'John McRae', email: 'vicepresident@mandurahswimmingclub.com.au' },
-  { role: 'Secretary', name: 'Kelli Thomson', email: 'secretary@mandurahswimmingclub.com.au' },
-  { role: 'Treasurer', name: 'Tamara Vreeken', email: 'treasurer@mandurahswimmingclub.com.au' },
-  { role: 'Registrar', name: 'Natasha Fernandes', email: 'registrar@mandurahswimmingclub.com.au' },
-]
-
-const general = [
-  { role: 'Club Recorder / Time Trial Coordinator', name: 'Karen Davies', email: 'recorder@mandurahswimmingclub.com.au' },
-  { role: 'Fundraising Coordinator', name: 'Tammy Gilbert & Warren Haugh', email: 'fundraising@mandurahswimmingclub.com.au' },
-  { role: 'Event Coordinator', name: 'Orla Brennan' },
-  { role: 'Meet Recorder', name: 'Karl Roots' },
-  { role: 'South West Regional Representative', name: 'Karen Davies' },
-  { role: 'Social Media Officer', name: 'Samantha Maley' },
-  { role: 'Website Officer', name: 'Damien & Luana Rahe', email: 'website@mandurahswimmingclub.com.au' },
-  { role: 'Grants Officer', name: 'Brett Snowdon' },
-  { role: 'MPIO', name: 'Laurence Davies' },
-  { role: 'Marketing Coordinator', name: 'Orla Brennan & Natasha Fernandes' },
-  { role: 'Uniform Coordinator', name: 'Kellie Shirra & Tamara Vreeken', email: 'uniforms@mandurahswimmingclub.com.au' },
-]
+import data from '../../content/committee.json'
 
 export default function Committee() {
   return (
@@ -29,7 +8,7 @@ export default function Committee() {
       <header className="page-header">
         <div className="container">
           <h1>Club Committee</h1>
-          <p>2025/26 Committee</p>
+          <p>{data.season} Committee</p>
         </div>
       </header>
       <section className="section">
@@ -42,14 +21,10 @@ export default function Committee() {
             <div className="table-wrap">
               <table className="data-table">
                 <thead>
-                  <tr>
-                    <th>Role</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                  </tr>
+                  <tr><th>Role</th><th>Name</th><th>Email</th></tr>
                 </thead>
                 <tbody>
-                  {contacts.map((row) => (
+                  {data.officeBearers.map((row) => (
                     <tr key={row.role}>
                       <td>{row.role}</td>
                       <td>{row.name}</td>
@@ -65,14 +40,10 @@ export default function Committee() {
             <div className="table-wrap">
               <table className="data-table">
                 <thead>
-                  <tr>
-                    <th>Role</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                  </tr>
+                  <tr><th>Role</th><th>Name</th><th>Email</th></tr>
                 </thead>
                 <tbody>
-                  {general.map((row) => (
+                  {data.generalCommittee.map((row) => (
                     <tr key={row.role}>
                       <td>{row.role}</td>
                       <td>{row.name}</td>

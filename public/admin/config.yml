@@ -1,0 +1,368 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Uncomment below for local development with `npx decap-server`
+# local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+# ─── Logo shown in the CMS dashboard ───
+logo_url: "/images/club-logo.png"
+
+collections:
+  # ════════════════════════════════════════
+  # NEWS POSTS (list of articles)
+  # ════════════════════════════════════════
+  - name: "news"
+    label: "📰 News Posts"
+    file: "content/news.json"
+    description: "Add, edit or remove news articles"
+    fields:
+      - name: "posts"
+        label: "News Posts"
+        widget: "list"
+        summary: "{{fields.title}} — {{fields.date}}"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "date", label: "Date", widget: "datetime", format: "YYYY-MM-DD" }
+          - { name: "summary", label: "Summary", widget: "text" }
+          - { name: "body", label: "Full Article", widget: "markdown", required: false }
+          - { name: "image", label: "Image", widget: "image", required: false }
+
+  # ════════════════════════════════════════
+  # CALENDAR EVENTS
+  # ════════════════════════════════════════
+  - name: "calendar"
+    label: "📅 Calendar Events"
+    file: "content/calendar.json"
+    description: "Manage upcoming club events"
+    fields:
+      - name: "events"
+        label: "Events"
+        widget: "list"
+        summary: "{{fields.title}} — {{fields.date}}"
+        fields:
+          - { name: "title", label: "Event Name", widget: "string" }
+          - { name: "date", label: "Date", widget: "datetime", format: "YYYY-MM-DD" }
+          - { name: "time", label: "Time (e.g. 6:00 PM)", widget: "string", required: false }
+          - { name: "description", label: "Description", widget: "text", required: false }
+
+  # ════════════════════════════════════════
+  # COMMITTEE MEMBERS
+  # ════════════════════════════════════════
+  - name: "committee"
+    label: "👥 Committee"
+    file: "content/committee.json"
+    description: "Update committee members each season"
+    fields:
+      - { name: "season", label: "Season", widget: "string", hint: "e.g. 2025/26" }
+      - name: "officeBearers"
+        label: "Office Bearers"
+        widget: "list"
+        summary: "{{fields.role}} — {{fields.name}}"
+        fields:
+          - { name: "role", label: "Role", widget: "string" }
+          - { name: "name", label: "Name", widget: "string" }
+          - { name: "email", label: "Email", widget: "string", required: false }
+      - name: "generalCommittee"
+        label: "General Committee"
+        widget: "list"
+        summary: "{{fields.role}} — {{fields.name}}"
+        fields:
+          - { name: "role", label: "Role", widget: "string" }
+          - { name: "name", label: "Name", widget: "string" }
+          - { name: "email", label: "Email", widget: "string", required: false }
+
+  # ════════════════════════════════════════
+  # COACHES
+  # ════════════════════════════════════════
+  - name: "coaches"
+    label: "🏊 Coaches"
+    file: "content/coaches.json"
+    description: "Update coaching team"
+    fields:
+      - name: "headCoachBio"
+        label: "Head Coach Bio (paragraphs)"
+        widget: "list"
+        field: { name: "paragraph", label: "Paragraph", widget: "text" }
+      - { name: "juniorCoachesIntro", label: "Junior Coaches Introduction", widget: "text" }
+      - name: "coaches"
+        label: "Coaches"
+        widget: "list"
+        summary: "{{fields.name}} — {{fields.role}}"
+        fields:
+          - { name: "id", label: "Photo ID (filename without extension)", widget: "string", hint: "e.g. coach-sharky — must match file in images/coaches/" }
+          - { name: "name", label: "Name", widget: "string" }
+          - { name: "role", label: "Role", widget: "select", options: ["Head Coach", "Junior Coach", "Assistant Coach"] }
+
+  # ════════════════════════════════════════
+  # CAPTAINS
+  # ════════════════════════════════════════
+  - name: "captains"
+    label: "🏅 Captains"
+    file: "content/captains.json"
+    description: "Update club captains each season"
+    fields:
+      - { name: "season", label: "Season", widget: "string" }
+      - name: "intro"
+        label: "Introduction (paragraphs)"
+        widget: "list"
+        field: { name: "paragraph", label: "Paragraph", widget: "text" }
+      - name: "selectionCriteria"
+        label: "Selection Criteria"
+        widget: "list"
+        field: { name: "criterion", label: "Criterion", widget: "string" }
+      - name: "captains"
+        label: "Captains"
+        widget: "list"
+        summary: "{{fields.name}} — {{fields.role}}"
+        fields:
+          - { name: "id", label: "Photo ID (filename without extension)", widget: "string", hint: "Must match file in images/captains/" }
+          - { name: "name", label: "Name", widget: "string" }
+          - { name: "role", label: "Role", widget: "select", options: ["Senior Club Captain", "Junior Club Captain"] }
+
+  # ════════════════════════════════════════
+  # SPONSORS
+  # ════════════════════════════════════════
+  - name: "sponsors"
+    label: "🤝 Sponsors"
+    file: "content/sponsors.json"
+    description: "Manage sponsor tiers and details"
+    fields:
+      - name: "platinum"
+        label: "Platinum Sponsors"
+        widget: "list"
+        summary: "{{fields.name}}"
+        fields: &sponsor_fields
+          - { name: "name", label: "Business Name", widget: "string" }
+          - { name: "logo", label: "Logo Filename", widget: "string", hint: "Filename in images/sponsors/" }
+          - { name: "phone", label: "Phone", widget: "string", required: false }
+          - { name: "address", label: "Address", widget: "string", required: false }
+          - { name: "web", label: "Website URL", widget: "string", required: false }
+          - { name: "facebook", label: "Facebook URL", widget: "string", required: false }
+      - name: "gold"
+        label: "Gold Sponsors"
+        widget: "list"
+        summary: "{{fields.name}}"
+        fields: *sponsor_fields
+      - name: "silver"
+        label: "Silver Sponsors"
+        widget: "list"
+        summary: "{{fields.name}}"
+        fields: *sponsor_fields
+      - name: "bronze"
+        label: "Bronze Sponsors"
+        widget: "list"
+        summary: "{{fields.name}}"
+        fields: *sponsor_fields
+
+  # ════════════════════════════════════════
+  # SQUADS & TRAINING SCHEDULE
+  # ════════════════════════════════════════
+  - name: "squads"
+    label: "🏋️ Squads & Schedule"
+    file: "content/squads.json"
+    description: "Update squad details and training times"
+    fields:
+      - { name: "intro", label: "Page Introduction", widget: "text" }
+      - name: "squads"
+        label: "Squads"
+        widget: "list"
+        summary: "{{fields.name}} Squad — {{fields.level}}"
+        fields:
+          - { name: "name", label: "Squad Name (colour)", widget: "string" }
+          - { name: "level", label: "Level", widget: "string" }
+          - { name: "age", label: "Minimum Age", widget: "string", required: false }
+          - name: "schedule"
+            label: "Training Sessions"
+            widget: "list"
+            summary: "{{fields.day}} {{fields.time}}"
+            fields:
+              - { name: "day", label: "Day", widget: "select", options: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] }
+              - { name: "type", label: "Type", widget: "select", options: ["Pool", "Dryland/Pool", "Dryland"] }
+              - { name: "time", label: "Time", widget: "string", hint: "e.g. 16:00 - 18:00" }
+
+  # ════════════════════════════════════════
+  # FEES
+  # ════════════════════════════════════════
+  - name: "fees"
+    label: "💰 Fees"
+    file: "content/fees.json"
+    description: "Update membership and squad fees"
+    fields:
+      - { name: "intro", label: "Page Heading", widget: "string" }
+      - { name: "kidsportNote", label: "KidSport Note", widget: "string" }
+      - { name: "kidsportUrl", label: "KidSport URL", widget: "string" }
+      - { name: "swaIntro", label: "SWA Fees Introduction", widget: "text" }
+      - name: "swaFees"
+        label: "SWA Membership Fees"
+        widget: "list"
+        summary: "{{fields.category}} — {{fields.fee}}"
+        fields:
+          - { name: "category", label: "Category", widget: "string" }
+          - { name: "description", label: "Description", widget: "string" }
+          - { name: "fee", label: "Fee", widget: "string" }
+      - { name: "clubFeesIntro", label: "Club Fees Introduction", widget: "string" }
+      - name: "clubFees"
+        label: "Club Membership Fees"
+        widget: "list"
+        summary: "{{fields.members}} — {{fields.fee}}"
+        fields:
+          - { name: "members", label: "Members", widget: "string" }
+          - { name: "fee", label: "Fee", widget: "string" }
+      - { name: "squadFeesIntro", label: "Squad Fees Introduction", widget: "string" }
+      - name: "squadFees"
+        label: "Squad Fees"
+        widget: "list"
+        summary: "{{fields.squad}} ({{fields.sessions}} sessions) — {{fields.fee}}"
+        fields:
+          - { name: "squad", label: "Squad(s)", widget: "string" }
+          - { name: "sessions", label: "Sessions per week", widget: "string" }
+          - { name: "fee", label: "Monthly Fee", widget: "string" }
+      - { name: "footnote", label: "Footnote", widget: "string" }
+      - { name: "marcUrl", label: "MARC Fees URL", widget: "string" }
+      - { name: "image", label: "Page Image", widget: "image" }
+
+  # ════════════════════════════════════════
+  # TARGET MEETS
+  # ════════════════════════════════════════
+  - name: "target-meets"
+    label: "🎯 Target Meets"
+    file: "content/target-meets.json"
+    description: "Update target meets each season"
+    fields:
+      - { name: "season", label: "Season Title", widget: "string" }
+      - { name: "intro", label: "Introduction", widget: "text" }
+      - { name: "pennantNote", label: "Country Pennants Note", widget: "text" }
+      - name: "meets"
+        label: "Target Meets"
+        widget: "list"
+        field: { name: "meet", label: "Meet", widget: "string" }
+      - { name: "footnote", label: "Footnote", widget: "string" }
+      - { name: "image", label: "Page Image", widget: "image" }
+
+  # ════════════════════════════════════════
+  # JX PROGRAM
+  # ════════════════════════════════════════
+  - name: "jx-program"
+    label: "⭐ JX Program"
+    file: "content/jx-program.json"
+    description: "Update JX results each year"
+    fields:
+      - { name: "season", label: "Season", widget: "string" }
+      - { name: "intro", label: "Introduction", widget: "text" }
+      - { name: "qualifyNote", label: "Qualification Note", widget: "text" }
+      - { name: "qualifyUrl", label: "Qualification Times URL", widget: "string" }
+      - { name: "image", label: "Page Image", widget: "image" }
+      - name: "gold"
+        label: "Gold Standard Swimmers"
+        widget: "list"
+        field: { name: "name", label: "Swimmer Name", widget: "string" }
+      - name: "silver"
+        label: "Silver Standard Swimmers"
+        widget: "list"
+        field: { name: "name", label: "Swimmer Name", widget: "string" }
+      - name: "bronze"
+        label: "Bronze Standard Swimmers"
+        widget: "list"
+        field: { name: "name", label: "Swimmer Name", widget: "string" }
+      - name: "blue"
+        label: "Blue Standard Swimmers"
+        widget: "list"
+        field: { name: "name", label: "Swimmer Name", widget: "string" }
+
+  # ════════════════════════════════════════
+  # CONTACT DETAILS
+  # ════════════════════════════════════════
+  - name: "contact"
+    label: "📞 Contact Details"
+    file: "content/contact.json"
+    description: "Update key contacts and addresses"
+    fields:
+      - name: "contacts"
+        label: "Key Contacts"
+        widget: "list"
+        summary: "{{fields.role}} — {{fields.name}}"
+        fields:
+          - { name: "role", label: "Role", widget: "string" }
+          - { name: "name", label: "Name", widget: "string" }
+          - { name: "email", label: "Email", widget: "string" }
+      - name: "venue"
+        label: "Venue Address"
+        widget: "object"
+        fields:
+          - { name: "name", label: "Venue Name", widget: "string" }
+          - { name: "street", label: "Street Address", widget: "string" }
+          - { name: "suburb", label: "Suburb & Postcode", widget: "string" }
+      - name: "postal"
+        label: "Postal Address"
+        widget: "object"
+        fields:
+          - { name: "line1", label: "Line 1", widget: "string" }
+          - { name: "line2", label: "Line 2", widget: "string" }
+
+  # ════════════════════════════════════════
+  # HOME PAGE
+  # ════════════════════════════════════════
+  - name: "home"
+    label: "🏠 Home Page"
+    file: "content/home.json"
+    description: "Edit hero section, stats, vision/mission"
+    fields:
+      - name: "hero"
+        label: "Hero Section"
+        widget: "object"
+        fields:
+          - { name: "eyebrow", label: "Eyebrow Text", widget: "string" }
+          - { name: "heading", label: "Main Heading", widget: "string" }
+          - { name: "tagline", label: "Tagline", widget: "string" }
+          - { name: "description", label: "Description", widget: "text" }
+          - { name: "image", label: "Background Image", widget: "image" }
+      - name: "stats"
+        label: "Stats Strip"
+        widget: "list"
+        max: 4
+        summary: "{{fields.number}} {{fields.label}}"
+        fields:
+          - { name: "number", label: "Number", widget: "string" }
+          - { name: "label", label: "Label", widget: "string" }
+      - name: "promoBanner"
+        label: "Promo Banner"
+        widget: "object"
+        fields:
+          - { name: "image", label: "Banner Image", widget: "image" }
+          - { name: "alt", label: "Alt Text", widget: "string" }
+      - name: "aboutPreview"
+        label: "About Preview Section"
+        widget: "object"
+        fields:
+          - { name: "heading", label: "Heading", widget: "string" }
+          - { name: "lead", label: "Lead Text", widget: "string" }
+          - name: "paragraphs"
+            label: "Paragraphs"
+            widget: "list"
+            field: { name: "paragraph", label: "Paragraph", widget: "text" }
+          - { name: "image", label: "Image", widget: "image" }
+          - { name: "joinUrl", label: "Join/Register URL", widget: "string" }
+      - name: "trial"
+        label: "Free Trial Section"
+        widget: "object"
+        fields:
+          - { name: "heading", label: "Heading", widget: "string" }
+          - { name: "subtitle", label: "Subtitle", widget: "string" }
+          - { name: "ctaText", label: "Button Text", widget: "string" }
+      - name: "coachesPreview"
+        label: "Coaches Preview"
+        widget: "object"
+        fields:
+          - { name: "heading", label: "Heading", widget: "string" }
+          - { name: "intro", label: "Introduction", widget: "text" }
+          - name: "featured"
+            label: "Featured Coach IDs"
+            widget: "list"
+            field: { name: "id", label: "Coach Photo ID", widget: "string" }
+      - { name: "vision", label: "Vision Statement", widget: "text" }
+      - { name: "mission", label: "Mission Statement", widget: "text" }
+      - { name: "tagline", label: "Tagline", widget: "string" }
