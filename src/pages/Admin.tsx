@@ -86,8 +86,8 @@ export default function Admin() {
                 Club Website Manager
               </p>
               <p style={{ margin: '0.5rem 0 0' }}>
-                <a href="mailto:mharvey2@outlook.com" style={{ color: '#0e7490', fontWeight: 600 }}>
-                  mharvey2@outlook.com
+                <a href="mailto:mathewharvey@gmail.com" style={{ color: '#0e7490', fontWeight: 600 }}>
+                  mathewharvey@gmail.com
                 </a>
               </p>
             </div>
@@ -133,8 +133,8 @@ export default function Admin() {
             <p style={{ lineHeight: 1.7, margin: 0 }}>
               <strong>Something else?</strong><br />
               Email{' '}
-              <a href="mailto:mharvey2@outlook.com" style={{ color: '#92400e' }}>
-                mharvey2@outlook.com
+              <a href="mailto:mathewharvey@gmail.com" style={{ color: '#92400e' }}>
+                mathewharvey@gmail.com
               </a>{' '}
               and Mathew will help you out.
             </p>

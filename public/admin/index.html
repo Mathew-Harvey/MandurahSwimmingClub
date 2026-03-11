@@ -7,6 +7,26 @@
   <title>Mandurah Swimming Club — Content Manager</title>
   <style>
     body { margin: 0; }
+    /* Custom CMS login page styling */
+    [data-slate-editor] { -webkit-user-modify: read-write !important; }
+    /* Style the login screen */
+    .nc-app-container {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    /* Make logo bigger and add padding */
+    .nc-logScreen-logo {
+      max-height: 120px !important;
+      margin-bottom: 1rem !important;
+    }
+    /* Style the login wrapper background */
+    [class*="LoginPage"] {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 50%, #14b8a6 100%) !important;
+      min-height: 100vh;
+    }
+    /* Decap CMS overrides for the outer frame */
+    div[class*="AppMainContainer"] > div:first-child {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0e7490 50%, #14b8a6 100%) !important;
+    }
   </style>
   <!-- Using GitHub backend — no Netlify Identity needed -->
 </head>

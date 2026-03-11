@@ -7,7 +7,7 @@ media_folder: "public/images"
 public_folder: "/images"
 
 # ─── Logo shown in the CMS dashboard ───
-logo_url: "/images/club-logo.png"
+logo_url: "/images/country-pennants/club-logo-colour.png"
 
 collections:
   # ════════════════════════════════════════
