@@ -4,8 +4,8 @@
    and CSS classes as the live website pages
    ============================================================ */
 
-// Shorthand
-const h = window.CMS.h;
+// Decap CMS bundles React on the global scope
+const h = window.React.createElement;
 
 // Helper: get list from entry
 function getList(entry, field) {
