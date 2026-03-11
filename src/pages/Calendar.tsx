@@ -9,7 +9,7 @@ interface CalendarEvent {
 }
 
 export default function Calendar() {
-  const events = (data.events as CalendarEvent[]).slice().sort(
+  const events = (Array.isArray(data.events) ? data.events as CalendarEvent[] : []).slice().sort(
     (a, b) => a.date.localeCompare(b.date) || (a.time || '').localeCompare(b.time || '')
   )
 
