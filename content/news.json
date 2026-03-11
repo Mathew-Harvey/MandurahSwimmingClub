@@ -1,3 +1,10 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "title": "test news post",
+      "date": "2026-03-11",
+      "summary": "this is a test news post ",
+      "image": "/images/capesor.jpg"
+    }
+  ]
 }
