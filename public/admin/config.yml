@@ -1,12 +1,6 @@
 backend:
-  name: github
-  repo: Mathew-Harvey/MandurahSwimmingClub
+  name: git-gateway
   branch: main
-  auth_type: pkce
-  app_id: ""  # TODO: Replace with your GitHub OAuth App Client ID
-
-# Uncomment below for local development with `npx decap-server`
-# local_backend: true
 
 media_folder: "public/images"
 public_folder: "/images"
