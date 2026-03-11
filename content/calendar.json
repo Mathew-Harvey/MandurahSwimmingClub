@@ -1,3 +1,10 @@
 {
-  "events": []
+  "events": [
+    {
+      "title": "test event",
+      "date": "2026-03-12",
+      "time": "test event ",
+      "description": "test even description"
+    }
+  ]
 }
